@@ -1,0 +1,26 @@
+package suj; 
+interface Area { 
+ float computeArea(float a, float b);} 
+class Circle implements Area { 
+ public float computeArea(float a, float b) { 
+return (float) (3.14 * a * a); }} 
+class Rectangle implements Area { 
+ public float computeArea(float a, float b) { 
+return (a * b); }} 
+class Triangle implements Area { 
+ public float computeArea(float a, float b) { 
+return (float) (0.5 * a * b); }} 
+class Square implements Area { 
+ public float computeArea(float a, float b) { 
+return (a * a)}} 
+public class Main { public static void
+main(String[] args) { 
+Circle c = new Circle(); 
+ Rectangle r = new Rectangle(); 
+ Triangle t = new Triangle(); 
+ Square s = new Square(); 
+ System.out.println("Area of the circle: " + c.computeArea(20, 0)); 
+ System.out.println("Area of the rectangle: " + r.computeArea(10, 20)); 
+ System.out.println("Area of the triangle: " + t.computeArea(20, 30)); 
+ System.out.println("Area of the square: " + s.computeArea(20, 0);} 
+} 

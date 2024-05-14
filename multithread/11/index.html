@@ -1,0 +1,34 @@
+package mypack;
+class TotalEarnings extends Thread
+{
+	int total1=0;
+  public void run()
+  {
+	  synchronized(this)
+	  {
+	  for(int i=0;i<=99;i++)
+	  {
+	  total1=total1+100;
+	  }
+	  this.notify();
+	  }
+	  }
+	  }
+public class MovieBookApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TotalEarnings t=new TotalEarnings();
+		t.start();
+		//System.out.println("Total Earning=" +total.te);
+		synchronized(t)
+		{ try 
+		{
+		t.wait();
+		}
+		catch(Exception e){}
+		System.out.println("Total Earning=" +t.total1);
+		}
+		}
+
+	}

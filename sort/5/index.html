@@ -1,0 +1,37 @@
+package arraylist100;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+public abstract class Test {
+
+	public static void main(String[] args) {
+		Scanner  input = new Scanner(System.in);
+		System.out.println("Enter choice :");
+		int choice = input.nextInt();
+		switch(choice) {
+		case 1:
+		ArrayList <Integer> mylist = new ArrayList <Integer>();
+		mylist.add(5);
+		mylist.add(3);
+		mylist.add(6);
+		mylist.add(8);
+		mylist.add(9);
+		mylist.add(2);
+		Collections.sort(mylist);
+		System.out.println(mylist);
+		break;
+		// TODO Auto-generated method stub
+		case 2:
+		ArrayList <String> mylist2 = new ArrayList <String>();
+		mylist2.add("Sujal");
+		mylist2.add("Yash");
+		mylist2.add("Kshitij");
+		mylist2.add("Sohan");
+		mylist2.add("Mayur");
+		mylist2.add("lalla");
+		Collections.sort(mylist2);
+		System.out.println(mylist2);
+		break;
+	}
+	
+	}}

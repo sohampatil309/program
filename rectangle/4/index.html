@@ -1,0 +1,56 @@
+package soham;
+import java.util.Scanner;
+public class Rectangle{
+
+	 double length,width,area;
+	 String color;
+	 Scanner sc=new Scanner(System.in);
+	 void get_length() {
+		    System.out.println("enter length");
+		    length = sc.nextDouble();
+		    sc.nextLine();
+		}
+
+		void get_width() {
+		    System.out.println("enter width");
+		    width = sc.nextDouble();
+		    sc.nextLine();
+		}
+
+	  String get_color()
+	  {System.out.println("enter color");
+	  color=sc.nextLine();
+	  return color;
+	  }
+	  double find_area()
+	  {  return(length*width);
+	  }
+
+	  
+		public static void main(String[] args) {
+			double a1,a2;
+			String c1,c2;
+			
+			Rectangle R1=new Rectangle();
+			Rectangle R2=new Rectangle();
+			R1.get_length();
+			R1.get_width();
+			c1=R1.get_color();
+			a1=R1.find_area();
+			
+			R2.get_length();
+			R2.get_width();
+			c2=R2.get_color();
+			a2=R2.find_area();
+			
+			if(a1==a2 && c1.equalsIgnoreCase(c2))
+			{
+				System.out.println("The rectangle are matching");
+			}
+			else {
+				System.out.println("The rectangle are not matching");
+			}
+			
+		}
+
+	}

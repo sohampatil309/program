@@ -1,0 +1,55 @@
+class Complex {
+
+    double r, i;
+
+    public Complex(double re, double im) {
+        r = re;
+        i = im;
+    }
+
+    void display() {
+        System.out.println("\n\tThe number " + r + "i" + i);
+    }
+
+    Complex add(Complex a) {
+        Complex n = new Complex(0, 0);
+        n.r = this.r + a.r;
+        n.i = this.i + a.i;
+        return n;
+    }
+
+    Complex sub(Complex a) {
+        Complex n = new Complex(0, 0);
+        n.r = this.r - a.r;
+        n.i = this.i - a.i;
+        return n;
+    }
+
+    Complex multi(Complex a) {
+        Complex n = new Complex(0, 0);
+        n.r = this.r * a.r - this.i * a.i;
+        n.i = this.r * a.i + this.i * a.r;
+        return n;
+    }
+
+
+
+
+    public static void main(String[] args) { 
+        Complex c1 = new Complex(10, 15);
+        Complex c2 = new Complex(20, 25);
+        Complex res = new Complex(0, 0);
+
+        System.out.println("\n\tAddition");
+        res = c1.add(c2);
+        res.display();
+        
+        System.out.println("\n\tSubtraction");
+        res = c1.sub(c2);
+        res.display();
+
+        System.out.println("\n\tMultiplication");
+        res = c1.multi(c2); // Fixed typo here
+        res.display();
+    }}
+

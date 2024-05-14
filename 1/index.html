@@ -1,0 +1,24 @@
+package kshitij;
+import java.util.*;
+
+public class pune {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int sum=0;
+		double avg;
+		System.out.println("enter the num");
+		Scanner num=new Scanner(System.in);
+		int n=num.nextInt();
+		int a[]=new int [n];
+		System.out.println("enter all the element");
+		
+		for(int i=1;i<=n;i++)
+		{
+			sum=sum+i;
+			
+		}
+		System.out.println("sum is"   +sum);
+		avg=(float)sum/n;
+		System.out.println("avg is"+avg);
+	}

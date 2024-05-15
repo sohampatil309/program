@@ -1,0 +1,57 @@
+method overloading
+package AIS;
+import java.util.Scanner;
+public class Overr {
+
+	public static void main(String[] args) {
+		Calculate c=new Calculate();
+		int result1=c.add(10,20);
+		System.out.println(result1);
+		double result2=c.add(8.5,4.6);
+		System.out.println(result2);
+		int result3=c.add(15,9,12);
+		System.out.println(result3);
+	}
+}
+  class Calculate
+  {
+     public int add(int x,int y) {
+     return x+y;
+  }
+     public double add(double x,double y)
+  {
+     return x+y;
+  }
+     public int add(int x,int y,int z)
+  {
+     return x+y+z;
+  }
+  }
+
+
+method overriding
+
+package kss;
+import java.util.*;
+class a{
+	void colour() {
+		System.out.println("fruit are good for health");
+	}
+}
+class b extends a
+{
+	void colour1()
+	{System.out.println("apple is red");
+}}
+
+public class friut {
+		public static void main(String[] args) {
+		
+b d=new b();
+d.colour();
+d.colour1();
+
+
+	}
+
+}

@@ -1,0 +1,28 @@
+Package ay;
+import java.util.Scanner;
+public class Recfact
+{
+	 public static void main(String[] args)
+	 { Scanner scanner=new Scanner(System.in);
+     System.out.print("Enter the number :");
+     int number=scanner.nextInt();
+     if(number<0){
+         System.out.println("Enter the number : ");
+     }
+     else 
+     {
+         long factorial=calFact(number);
+         System.out.println("Factorial of"+number+"is:"+factorial);
+     } 
+     scanner.close();
+ }
+ static long calFact(int n){
+     if(n==0||n==1){
+         return 1;
+     }
+     else
+     {
+         return n*calFact(n - 1);
+         }
+     }
+ }

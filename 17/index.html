@@ -1,0 +1,55 @@
+package string;
+import java.util.Scanner;
+public class strings {
+
+	public static void main(String[] args) {
+	
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter first string");
+      String a=sc.nextLine();
+      System.out.println("Enter second string");
+      String b=sc.nextLine();
+      System.out.println("Enter the choice");
+      System.out.println("1.Equal/n2.compare/n3.continance/n4.uppercase/n5.lowercase/n6.substring/n7.replace/n8.equalsIgnoreCase/n9.stringequal/n10.stringadd");
+      int ch=sc.nextInt();
+      switch(ch)
+      {
+      case 1:
+    	  System.out.println(a.equals(b));
+      break;
+      case 2 :
+    	  System.out.println(a.compareTo(b));
+          break;
+      case 3 :
+    	  System.out.println(a.concat(b));
+          break; 
+      case 4 :
+    	  System.out.println(a.toUpperCase());
+          break;
+      case 5:
+         System.out.println(a.toLowerCase( ));
+          break;
+      case 6 : 
+    	  System.out.println(a.substring(0,6)); 
+    	  break;
+      case 7:
+    	  System.out.println("choose string to replace");
+    	  String s=sc.next();
+    	//  System.out.println("elemnt to be removed ");
+    	  //String x=sc.next();
+    	  System.out.println("element to be inserted");
+    	  String y=sc.next();
+    	  System.out.println(s.replace(s, y));
+    	  break;
+      case 8:
+    	  System.out.println(a.equalsIgnoreCase(b));
+    	  break;
+      case 9 :
+    	  System.out.println(a==b);
+          break;
+      case 10 :
+    	  System.out.println(a+b);
+          break;
+     }
+	}
+}

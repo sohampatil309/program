@@ -1,52 +1,50 @@
-1D array 
-package AAA;
+clear all;
+close all;
+clc;
 
-import java.util.Scanner;
-public class bbb{
+% Define the time vector and signal frequency
+t = -100:0.01:100;
+fm = 0.02; % Signal frequency
 
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		System.out.println("enter the array");
-		int a=sc.nextInt();
-		for(int i=0;i<=a;i++);
-		{ System.out.println(+a);
-			
-		}
-	}
-}
+% Generate the continuous cosine signal
+x = cos(2 * pi * fm * t);
 
-2D array
+% Plot the continuous signal
+figure;
+subplot(2, 2, 1)
+plot(t, x, 'g')
+xlabel('Time (t)')
+ylabel('Amplitude')
+title('Continuous Cosine Signal')
 
-package AAA;
+% Define sample indices
+n = -2:1:2;
 
-import java.util.Scanner;
-public class bbb{
+% Case 1: Sampling Frequency fs = fm
+fs1 = fm;  % Sampling rate equal to signal frequency
+y1 = cos(2 * pi * fm * (n / fs1));
+subplot(2, 2, 2)
+stem(n, y1, 'r')
+xlabel('Sample Index (n)')
+ylabel('Amplitude')
+title('Sampling with f_s = f_m')
 
-	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		System.out.println("no. of rows of array=");
-		int row=sc.nextInt();
-		System.out.println("no. of columns of array=");
-		
-		int column=sc.nextInt();
-		System.out.println("enter elements of row and column");
-		int a[][]=new int[row][column];
-		for(int i=0;i<row;i++)
-		{
-			for(int j=0;j<column;j++)
-			{
-				a[i][j]=sc.nextInt();
-			}
-		}
-		
-		for(int i=0;i<row;i++)
-		{
-			for(int j=0;j<column;j++)
-			{
-				System.out.print(a[i][j]+" ");
-			}
-	System.out.println();
+% Case 2: Sampling Frequency fs > fm
+fs2 = 2 * fm;  % Sampling rate higher than signal frequency (Nyquist rate)
+y2 = cos(2 * pi * fm * (n / fs2));
+subplot(2, 2, 3)
+stem(n, y2, 'b')
+xlabel('Sample Index (n)')
+ylabel('Amplitude')
+title('Sampling with f_s > f_m (Nyquist Rate)')
 
-	}
-	}
-}
+% Case 3: Sampling Frequency fm > fs
+fs3 = 0.5 * fm;  % Sampling rate lower than signal frequency (undersampling)
+y3 = cos(2 * pi * fm * (n / fs3));
+subplot(2, 2, 4)
+stem(n, y3, 'm')
+xlabel('Sample Index (n)')
+ylabel('Amplitude')
+title('Sampling with f_m > f_s (Undersampling)')
+
+
